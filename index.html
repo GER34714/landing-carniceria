@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Parrilla Chaqueña</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #111;
+      color: #fff;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+
+      background:
+        linear-gradient(
+          rgba(0, 0, 0, 0.55),
+          rgba(0, 0, 0, 0.7)
+        ),
+        url("https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=2000&q=85");
+
+      background-size: cover;
+      background-position: center;
+    }
+
+    .content {
+      padding: 30px;
+      max-width: 900px;
+    }
+
+    .line {
+      width: 70px;
+      height: 4px;
+      background: #b51f1f;
+      margin: 0 auto 25px;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 8vw, 7rem);
+      font-weight: 800;
+      line-height: 0.95;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+    }
+
+    p {
+      margin: 25px 0 35px;
+      font-size: 1.2rem;
+      letter-spacing: 2px;
+      color: #eee;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 17px 40px;
+
+      background: #b51f1f;
+      color: #fff;
+
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 2px;
+
+      border: 2px solid #b51f1f;
+      border-radius: 4px;
+
+      transition: 0.3s ease;
+    }
+
+    .btn:hover {
+      background: transparent;
+      border-color: #fff;
+      transform: translateY(-3px);
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        letter-spacing: 2px;
+      }
+
+      p {
+        font-size: 1rem;
+        letter-spacing: 1px;
+      }
+
+      .btn {
+        width: 100%;
+        max-width: 280px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="hero">
+
+    <div class="content">
+
+      <div class="line"></div>
+
+      <h1>
+        La Parrilla<br>
+        Chaqueña
+      </h1>
+
+      <p>
+        El auténtico sabor de la parrilla argentina
+      </p>
+
+      <a href="#" class="btn">
+        Ver tienda
+      </a>
+
+    </div>
+
+  </section>
+
+</body>
+</html>
