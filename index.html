@@ -1,12 +1,27 @@
+Sí. Te lo ajusté para que el **footer se vea mucho más prolijo y moderno**, especialmente en celular, y mejoré el responsive general para que el hero, logo, textos y botón se adapten correctamente a cualquier pantalla.
+
+Además, hice que el footer quede siempre al final de la página y no genere problemas de altura en móviles. Mantengo los enlaces que ya tenías.
+
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <meta
+    name="description"
+    content="Carnicería Luján - Cortes seleccionados, embutidos, pollo, cerdo, achuras y mucho más."
+  >
+
   <title>Carnicería Luján</title>
 
   <style>
+
+    /* ==================================================
+       RESET
+    ================================================== */
+
     * {
       margin: 0;
       padding: 0;
@@ -15,60 +30,83 @@
 
     html {
       scroll-behavior: smooth;
+      width: 100%;
+      overflow-x: hidden;
     }
 
     body {
+      width: 100%;
+      min-height: 100vh;
+
       font-family: Arial, Helvetica, sans-serif;
+
       background: #111;
       color: #fff;
+
+      overflow-x: hidden;
     }
 
-    /* =========================
+    /* ==================================================
        HERO
-    ========================= */
+    ================================================== */
 
     .hero {
-      min-height: 100vh;
+      position: relative;
+
       width: 100%;
+      min-height: 100vh;
+      min-height: 100svh;
 
       display: flex;
       align-items: center;
       justify-content: center;
+
       text-align: center;
 
-      position: relative;
       overflow: hidden;
 
       background:
         linear-gradient(
-          rgba(0, 0, 0, 0.35),
-          rgba(0, 0, 0, 0.65)
+          rgba(0, 0, 0, 0.32),
+          rgba(0, 0, 0, 0.68)
         ),
         url("https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=2200&q=90");
 
       background-size: cover;
-      background-position: center;
+      background-position: center center;
+      background-repeat: no-repeat;
     }
+
+    /* ==================================================
+       CONTENIDO
+    ================================================== */
 
     .content {
       position: relative;
       z-index: 2;
 
-      padding: 30px;
+      width: 100%;
       max-width: 1000px;
+
+      padding: 50px 30px 90px;
 
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
     }
 
-    /* =========================
-       TEXTO SUPERIOR
-    ========================= */
+    /* ==================================================
+       TITULO SUPERIOR
+    ================================================== */
 
     .small-title {
-      font-size: 14px;
-      letter-spacing: 5px;
+      width: 100%;
+
+      font-size: clamp(10px, 1.2vw, 14px);
+
+      letter-spacing: clamp(2px, 0.5vw, 5px);
+
       text-transform: uppercase;
 
       color: #ddd;
@@ -77,32 +115,39 @@
     }
 
     .line {
-      width: 70px;
+      width: clamp(45px, 7vw, 70px);
       height: 4px;
 
       background: #b51f1f;
 
-      margin: 0 auto 25px;
+      margin-bottom: 25px;
+
+      flex-shrink: 0;
     }
 
-    /* =========================
+    /* ==================================================
        LOGO
-    ========================= */
+    ================================================== */
 
     .hero-logo {
-      width: clamp(280px, 45vw, 620px);
-      max-width: 90%;
-      height: auto;
-
       display: block;
 
-      margin: 5px auto 25px;
+      width: min(620px, 75vw);
+      height: auto;
+
+      max-height: 48vh;
+
+      object-fit: contain;
+
+      margin: 0 auto 25px;
 
       filter:
-        drop-shadow(0 8px 15px rgba(0, 0, 0, 0.8))
+        drop-shadow(0 8px 15px rgba(0, 0, 0, 0.85))
         drop-shadow(0 0 25px rgba(181, 31, 31, 0.35));
 
       animation: logoPulse 3s ease-in-out infinite;
+
+      will-change: transform;
     }
 
     @keyframes logoPulse {
@@ -133,135 +178,169 @@
 
     }
 
-    /* =========================
-       SUBTÍTULO
-    ========================= */
+    /* ==================================================
+       SUBTITULO
+    ================================================== */
 
     .subtitle {
-      margin: 10px 0 35px;
+      width: 100%;
+      max-width: 750px;
 
-      font-size: 1.15rem;
-      letter-spacing: 3px;
+      margin: 5px auto 32px;
+
+      font-size: clamp(12px, 1.6vw, 18px);
+
+      line-height: 1.5;
+
+      letter-spacing: clamp(1px, 0.3vw, 3px);
 
       text-transform: uppercase;
 
       color: #f1f1f1;
 
       text-shadow:
-        0 2px 8px rgba(0, 0, 0, 0.8);
+        0 2px 8px rgba(0, 0, 0, 0.9);
     }
 
-    /* =========================
+    /* ==================================================
        BOTÓN
-    ========================= */
+    ================================================== */
 
     .btn {
-      display: inline-block;
+      display: inline-flex;
 
-      padding: 18px 45px;
+      align-items: center;
+      justify-content: center;
+
+      min-width: 220px;
+
+      padding: 17px 40px;
 
       background: #a71919;
-      color: white;
+      color: #fff;
 
       text-decoration: none;
       text-transform: uppercase;
 
-      font-size: 14px;
-      font-weight: bold;
-      letter-spacing: 2px;
-
-      border: 2px solid #a71919;
-      border-radius: 3px;
-
-      transition: all 0.3s ease;
-
-      box-shadow:
-        0 8px 25px rgba(0, 0, 0, 0.35);
-    }
-
-    .btn:hover {
-      background: transparent;
-      border-color: white;
-
-      transform: translateY(-3px);
-
-      box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.5);
-    }
-
-    /* =========================
-       TEXTO INFERIOR DEL HERO
-    ========================= */
-
-    .bottom-text {
-      position: absolute;
-
-      bottom: 30px;
-      left: 0;
-      right: 0;
-
-      text-align: center;
-
-      font-size: 11px;
-      letter-spacing: 3px;
-
-      text-transform: uppercase;
-
-      color: rgba(255, 255, 255, 0.7);
-
-      z-index: 3;
-    }
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    footer {
-      background: #0b0b0b;
-
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-
-      padding: 30px 20px;
-
-      text-align: center;
-    }
-
-    .footer-brand {
-      font-size: 18px;
-
+      font-size: 13px;
       font-weight: 800;
 
       letter-spacing: 2px;
 
+      border: 2px solid #a71919;
+      border-radius: 4px;
+
+      transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+
+      box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    .btn:hover {
+      background: transparent;
+
+      border-color: #fff;
+
+      transform: translateY(-4px);
+
+      box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.55);
+    }
+
+    .btn:active {
+      transform: translateY(-1px);
+    }
+
+    /* ==================================================
+       TEXTO INFERIOR
+    ================================================== */
+
+    .bottom-text {
+      position: absolute;
+
+      z-index: 3;
+
+      left: 20px;
+      right: 20px;
+      bottom: 28px;
+
+      text-align: center;
+
+      font-size: clamp(8px, 1vw, 11px);
+
+      line-height: 1.4;
+
+      letter-spacing: clamp(1px, 0.3vw, 3px);
+
       text-transform: uppercase;
+
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    /* ==================================================
+       FOOTER
+    ================================================== */
+
+    footer {
+      width: 100%;
+
+      background:
+        linear-gradient(
+          180deg,
+          #111 0%,
+          #090909 100%
+        );
+
+      border-top: 1px solid rgba(255, 255, 255, 0.09);
+
+      padding:
+        clamp(30px, 5vw, 48px)
+        20px
+        clamp(22px, 4vw, 35px);
+
+      text-align: center;
+    }
+
+    .footer-container {
+      width: 100%;
+      max-width: 900px;
+
+      margin: 0 auto;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .footer-brand {
+      font-size: clamp(16px, 2vw, 21px);
+
+      font-weight: 900;
+
+      letter-spacing: clamp(1px, 0.3vw, 3px);
+
+      text-transform: uppercase;
+
+      color: #fff;
 
       margin-bottom: 10px;
     }
 
-    .footer-copy {
-      font-size: 13px;
+    .footer-description {
+      width: 100%;
+      max-width: 600px;
 
       color: #999;
 
-      margin-bottom: 12px;
-    }
+      font-size: clamp(11px, 1.3vw, 14px);
 
-    .ciborg {
-      display: inline-block;
+      line-height: 1.6;
 
-      color: #fff;
-
-      font-weight: bold;
-
-      text-decoration: none;
-
-      transition: all 0.3s ease;
-    }
-
-    .ciborg:hover {
-      color: #b51f1f;
-
-      transform: translateY(-1px);
+      margin-bottom: 18px;
     }
 
     .footer-line {
@@ -270,103 +349,271 @@
 
       background: #a71919;
 
-      margin: 15px auto;
+      margin: 2px auto 20px;
+    }
+
+    .footer-copy {
+      color: #777;
+
+      font-size: clamp(10px, 1.2vw, 13px);
+
+      line-height: 1.7;
+
+      margin-bottom: 8px;
+    }
+
+    .ciborg {
+      display: inline-block;
+
+      color: #fff;
+
+      font-weight: 800;
+
+      text-decoration: none;
+
+      margin-left: 3px;
+
+      transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+    }
+
+    .ciborg:hover {
+      color: #e12626;
+
+      transform: translateY(-1px);
     }
 
     .footer-bottom {
-      font-size: 11px;
+      color: #555;
 
-      color: #666;
+      font-size: clamp(9px, 1vw, 11px);
 
       letter-spacing: 1px;
+
+      margin-top: 7px;
     }
 
-    /* =========================
-       RESPONSIVE
-    ========================= */
+    /* ==================================================
+       TABLETS
+    ================================================== */
+
+    @media (max-width: 900px) {
+
+      .content {
+        padding:
+          45px
+          25px
+          85px;
+      }
+
+      .hero-logo {
+        width: min(560px, 78vw);
+        max-height: 45vh;
+      }
+
+      .subtitle {
+        max-width: 650px;
+      }
+
+    }
+
+    /* ==================================================
+       CELULARES
+    ================================================== */
 
     @media (max-width: 600px) {
 
       .hero {
         min-height: 100svh;
 
-        background-position: center;
+        background-position: 55% center;
       }
 
       .content {
-        padding: 20px;
+        min-height: 100svh;
+
+        padding:
+          35px
+          18px
+          80px;
       }
 
       .small-title {
-        font-size: 11px;
+        font-size: 10px;
 
-        letter-spacing: 3px;
+        letter-spacing: 2.5px;
 
         margin-bottom: 12px;
       }
 
       .line {
-        width: 55px;
+        width: 50px;
 
         height: 3px;
 
-        margin-bottom: 15px;
+        margin-bottom: 18px;
+      }
+
+      .hero-logo {
+        width: min(88vw, 400px);
+
+        max-width: 88vw;
+
+        max-height: 38vh;
+
+        margin-bottom: 18px;
+      }
+
+      .subtitle {
+        width: 100%;
+
+        max-width: 350px;
+
+        font-size: 11px;
+
+        letter-spacing: 1.2px;
+
+        line-height: 1.6;
+
+        margin-bottom: 25px;
+      }
+
+      .btn {
+        width: min(100%, 300px);
+
+        min-width: 0;
+
+        padding: 16px 20px;
+
+        font-size: 12px;
+
+        letter-spacing: 1.5px;
+      }
+
+      .bottom-text {
+        left: 12px;
+        right: 12px;
+
+        bottom: 17px;
+
+        font-size: 8px;
+
+        letter-spacing: 1.5px;
+      }
+
+      footer {
+        padding:
+          30px
+          18px
+          25px;
+      }
+
+      .footer-brand {
+        font-size: 16px;
+
+        letter-spacing: 1.5px;
+      }
+
+      .footer-description {
+        max-width: 330px;
+
+        font-size: 11px;
+
+        line-height: 1.6;
+      }
+
+      .footer-copy {
+        max-width: 340px;
+
+        font-size: 10px;
+
+        line-height: 1.7;
+      }
+
+      .footer-bottom {
+        font-size: 9px;
+
+        line-height: 1.5;
+      }
+
+    }
+
+    /* ==================================================
+       CELULARES MUY PEQUEÑOS
+    ================================================== */
+
+    @media (max-width: 380px) {
+
+      .content {
+        padding:
+          25px
+          14px
+          75px;
+      }
+
+      .small-title {
+        font-size: 9px;
+
+        letter-spacing: 2px;
       }
 
       .hero-logo {
         width: 85vw;
 
-        max-width: 420px;
-
-        margin-bottom: 20px;
+        max-height: 34vh;
       }
 
       .subtitle {
-        font-size: 0.85rem;
+        font-size: 10px;
 
-        letter-spacing: 1.5px;
-
-        line-height: 1.6;
-
-        margin-bottom: 28px;
+        letter-spacing: 1px;
       }
 
       .btn {
-        width: 100%;
+        padding: 14px 18px;
 
-        max-width: 280px;
-
-        padding: 16px 25px;
+        font-size: 11px;
       }
 
       .bottom-text {
-        bottom: 18px;
+        font-size: 7px;
 
-        font-size: 9px;
-
-        letter-spacing: 2px;
-
-        padding: 0 15px;
+        letter-spacing: 1px;
       }
 
       footer {
-        padding: 25px 15px;
+        padding-left: 12px;
+        padding-right: 12px;
       }
 
-      .footer-brand {
-        font-size: 15px;
-      }
-
-      .footer-copy {
-        font-size: 12px;
-      }
     }
 
-    /* =========================
+    /* ==================================================
+       PANTALLAS GRANDES
+    ================================================== */
+
+    @media (min-width: 1600px) {
+
+      .content {
+        max-width: 1200px;
+      }
+
+      .hero-logo {
+        width: 650px;
+      }
+
+    }
+
+    /* ==================================================
        REDUCIR ANIMACIONES
-    ========================= */
+    ================================================== */
 
     @media (prefers-reduced-motion: reduce) {
+
+      html {
+        scroll-behavior: auto;
+      }
 
       .hero-logo {
         animation: none;
@@ -384,9 +631,9 @@
 
 <body>
 
-  <!-- =========================
+  <!-- ==================================================
        HERO
-  ========================= -->
+  ================================================== -->
 
   <main class="hero">
 
@@ -398,19 +645,21 @@
 
       <div class="line"></div>
 
-      <!-- LOGO DE CARNICERÍA LUJÁN -->
+      <!-- LOGO -->
 
       <img
         src="https://iili.io/CLyKwYX.png"
-        alt="Carnicería Luján"
+        alt="Logo Carnicería Luján"
         class="hero-logo"
       >
+
+      <!-- SUBTÍTULO -->
 
       <div class="subtitle">
         Cortes seleccionados · Calidad garantizada
       </div>
 
-      <!-- BOTÓN AL CARRITO -->
+      <!-- BOTÓN -->
 
       <a
         href="https://carrito-carniceria-demo.onrender.com/"
@@ -421,6 +670,8 @@
 
     </div>
 
+    <!-- TEXTO INFERIOR -->
+
     <div class="bottom-text">
       Carne de calidad para tu mesa
     </div>
@@ -428,41 +679,50 @@
   </main>
 
 
-  <!-- =========================
+  <!-- ==================================================
        FOOTER
-  ========================= -->
+  ================================================== -->
 
   <footer>
 
-    <div class="footer-brand">
-      Carnicería Luján
-    </div>
+    <div class="footer-container">
 
-    <div class="footer-line"></div>
+      <div class="footer-brand">
+        Carnicería Luján
+      </div>
 
-    <div class="footer-copy">
-      © 2026 Carnicería Luján · Todos los derechos reservados
-    </div>
+      <div class="footer-description">
+        Cortes seleccionados, calidad garantizada
+        y el mejor sabor para tu mesa.
+      </div>
 
-    <div class="footer-copy">
-      Creado y diseñado por
+      <div class="footer-line"></div>
 
-      <a
-        href="https://ciborg347.onrender.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="ciborg"
-      >
-        CIBORG347
-      </a>
+      <div class="footer-copy">
+        © 2026 Carnicería Luján · Todos los derechos reservados
+      </div>
 
-    </div>
+      <div class="footer-copy">
+        Creado y diseñado por
 
-    <div class="footer-bottom">
-      Diseño web y soluciones digitales
+        <a
+          href="https://ciborg347.onrender.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="ciborg"
+        >
+          CIBORG347
+        </a>
+      </div>
+
+      <div class="footer-bottom">
+        Diseño web y soluciones digitales
+      </div>
+
     </div>
 
   </footer>
 
 </body>
 </html>
+```
