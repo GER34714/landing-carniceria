@@ -3,20 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta
-    name="description"
-    content="Carnicería Luján - Cortes seleccionados, embutidos, pollo, cerdo, achuras y mucho más."
-  >
-
+  <meta name="description" content="Carnicería Luján - Cortes seleccionados, embutidos, pollo, cerdo, achuras y mucho más.">
   <title>Carnicería Luján</title>
-
   <style>
-
     /* ==================================================
        RESET
     ================================================== */
-
     * {
       margin: 0;
       padding: 0;
@@ -32,280 +24,361 @@
     body {
       width: 100%;
       min-height: 100vh;
-
       font-family: Arial, Helvetica, sans-serif;
-
       background: #111;
       color: #fff;
-
       overflow-x: hidden;
     }
 
     /* ==================================================
        HERO
     ================================================== */
-
     .hero {
       position: relative;
-
       width: 100%;
       min-height: 100vh;
       min-height: 100svh;
-
       display: flex;
       align-items: center;
       justify-content: center;
-
       text-align: center;
-
       overflow: hidden;
-
       background:
-        linear-gradient(
-          rgba(0, 0, 0, 0.32),
-          rgba(0, 0, 0, 0.68)
-        ),
+        linear-gradient(rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0.68)),
         url("https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=2200&q=90");
-
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
     }
 
-    /* ==================================================
-       CONTENIDO
-    ================================================== */
-
     .content {
       position: relative;
       z-index: 2;
-
       width: 100%;
       max-width: 1000px;
-
       padding: 50px 30px 90px;
-
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
     }
 
-    /* ==================================================
-       TITULO SUPERIOR
-    ================================================== */
-
     .small-title {
       width: 100%;
-
       font-size: clamp(10px, 1.2vw, 14px);
-
       letter-spacing: clamp(2px, 0.5vw, 5px);
-
       text-transform: uppercase;
-
       color: #ddd;
-
       margin-bottom: 18px;
     }
 
     .line {
       width: clamp(45px, 7vw, 70px);
       height: 4px;
-
       background: #b51f1f;
-
       margin-bottom: 25px;
-
       flex-shrink: 0;
     }
 
-    /* ==================================================
-       LOGO
-    ================================================== */
-
     .hero-logo {
       display: block;
-
       width: min(620px, 75vw);
       height: auto;
-
       max-height: 48vh;
-
       object-fit: contain;
-
       margin: 0 auto 25px;
-
       filter:
         drop-shadow(0 8px 15px rgba(0, 0, 0, 0.85))
         drop-shadow(0 0 25px rgba(181, 31, 31, 0.35));
-
       animation: logoPulse 3s ease-in-out infinite;
-
       will-change: transform;
     }
 
     @keyframes logoPulse {
-
       0% {
         transform: scale(1);
-
         filter:
           drop-shadow(0 8px 15px rgba(0, 0, 0, 0.8))
           drop-shadow(0 0 20px rgba(181, 31, 31, 0.25));
       }
-
       50% {
         transform: scale(1.035);
-
         filter:
           drop-shadow(0 10px 20px rgba(0, 0, 0, 0.85))
           drop-shadow(0 0 35px rgba(181, 31, 31, 0.55));
       }
-
       100% {
         transform: scale(1);
-
         filter:
           drop-shadow(0 8px 15px rgba(0, 0, 0, 0.8))
           drop-shadow(0 0 20px rgba(181, 31, 31, 0.25));
       }
-
     }
-
-    /* ==================================================
-       SUBTITULO
-    ================================================== */
 
     .subtitle {
       width: 100%;
       max-width: 750px;
-
       margin: 5px auto 32px;
-
       font-size: clamp(12px, 1.6vw, 18px);
-
       line-height: 1.5;
-
       letter-spacing: clamp(1px, 0.3vw, 3px);
-
       text-transform: uppercase;
-
       color: #f1f1f1;
-
-      text-shadow:
-        0 2px 8px rgba(0, 0, 0, 0.9);
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
     }
-
-    /* ==================================================
-       BOTÓN
-    ================================================== */
 
     .btn {
       display: inline-flex;
-
       align-items: center;
       justify-content: center;
-
       min-width: 220px;
-
       padding: 17px 40px;
-
       background: #a71919;
       color: #fff;
-
       text-decoration: none;
       text-transform: uppercase;
-
       font-size: 13px;
       font-weight: 800;
-
       letter-spacing: 2px;
-
       border: 2px solid #a71919;
       border-radius: 4px;
-
       transition:
         transform 0.3s ease,
         background 0.3s ease,
         border-color 0.3s ease,
         box-shadow 0.3s ease;
-
-      box-shadow:
-        0 8px 25px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
     }
 
     .btn:hover {
       background: transparent;
-
       border-color: #fff;
-
       transform: translateY(-4px);
-
-      box-shadow:
-        0 12px 35px rgba(0, 0, 0, 0.55);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.55);
     }
 
     .btn:active {
       transform: translateY(-1px);
     }
 
-    /* ==================================================
-       TEXTO INFERIOR
-    ================================================== */
-
     .bottom-text {
       position: absolute;
-
       z-index: 3;
-
       left: 20px;
       right: 20px;
       bottom: 28px;
-
       text-align: center;
-
       font-size: clamp(8px, 1vw, 11px);
-
       line-height: 1.4;
-
       letter-spacing: clamp(1px, 0.3vw, 3px);
-
       text-transform: uppercase;
-
       color: rgba(255, 255, 255, 0.72);
+    }
+
+    /* ==================================================
+       SECCIONES NUEVAS
+    ================================================== */
+    .section {
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 60px 20px 40px;
+      text-align: center;
+    }
+
+    .section-title {
+      font-size: clamp(24px, 4vw, 38px);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+      color: #fff;
+    }
+
+    .section-subtitle {
+      color: #aaa;
+      font-size: clamp(14px, 1.6vw, 18px);
+      margin-bottom: 40px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ===== CARDS ===== */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 30px;
+      margin-top: 10px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.04);
+      padding: 30px 20px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      transition: transform 0.25s ease, background 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    .card-icon {
+      font-size: 40px;
+      margin-bottom: 15px;
+      display: block;
+    }
+
+    .card-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .card-text {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #ccc;
+    }
+
+    /* ===== MEDIOS DE PAGO ===== */
+    .payment-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px 30px;
+      margin: 20px 0 10px;
+    }
+
+    .payment-item {
+      font-size: 18px;
+      font-weight: 600;
+      color: #eee;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 10px 24px;
+      border-radius: 40px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      letter-spacing: 0.5px;
+    }
+
+    /* ===== FAQ ===== */
+    .faq-list {
+      max-width: 700px;
+      margin: 20px auto 0;
+      text-align: left;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      padding: 18px 0;
+    }
+
+    .faq-question {
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: default;
+    }
+
+    .faq-answer {
+      font-size: 15px;
+      color: #bbb;
+      line-height: 1.6;
+      padding-top: 10px;
+      padding-left: 6px;
+    }
+
+    .faq-arrow {
+      color: #a71919;
+      font-size: 22px;
+      font-weight: 300;
+      margin-left: 15px;
+    }
+
+    /* ===== VISITANOS ===== */
+    .visit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-top: 20px;
+      text-align: left;
+    }
+
+    .visit-info {
+      background: rgba(255, 255, 255, 0.03);
+      padding: 30px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .visit-info p {
+      margin: 12px 0;
+      font-size: 16px;
+      color: #ddd;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .visit-info strong {
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .visit-family {
+      background: rgba(181, 31, 31, 0.15);
+      border-left: 4px solid #a71919;
+      padding: 20px 25px;
+      border-radius: 8px;
+      margin-top: 20px;
+      font-size: 17px;
+      line-height: 1.6;
+      color: #eee;
+    }
+
+    .visit-family strong {
+      color: #fff;
+    }
+
+    /* ===== MAPA ===== */
+    .map-container {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      height: 100%;
+      min-height: 280px;
+      background: #1a1a1a;
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 280px;
+      display: block;
+      border: 0;
     }
 
     /* ==================================================
        FOOTER
     ================================================== */
-
     footer {
       width: 100%;
-
-      background:
-        linear-gradient(
-          180deg,
-          #111 0%,
-          #090909 100%
-        );
-
+      background: linear-gradient(180deg, #111 0%, #090909 100%);
       border-top: 1px solid rgba(255, 255, 255, 0.09);
-
-      padding:
-        clamp(30px, 5vw, 48px)
-        20px
-        clamp(22px, 4vw, 35px);
-
+      padding: clamp(30px, 5vw, 48px) 20px clamp(22px, 4vw, 35px);
       text-align: center;
     }
 
     .footer-container {
       width: 100%;
       max-width: 900px;
-
       margin: 0 auto;
-
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -313,389 +386,228 @@
 
     .footer-brand {
       font-size: clamp(16px, 2vw, 21px);
-
       font-weight: 900;
-
       letter-spacing: clamp(1px, 0.3vw, 3px);
-
       text-transform: uppercase;
-
       color: #fff;
-
       margin-bottom: 10px;
     }
 
     .footer-description {
       width: 100%;
       max-width: 600px;
-
       color: #999;
-
       font-size: clamp(11px, 1.3vw, 14px);
-
       line-height: 1.6;
-
       margin-bottom: 18px;
     }
 
     .footer-line {
       width: 45px;
       height: 2px;
-
       background: #a71919;
-
       margin: 2px auto 20px;
     }
 
     .footer-copy {
       color: #777;
-
       font-size: clamp(10px, 1.2vw, 13px);
-
       line-height: 1.7;
-
       margin-bottom: 8px;
     }
 
     .ciborg {
       display: inline-block;
-
       color: #fff;
-
       font-weight: 800;
-
       text-decoration: none;
-
       margin-left: 3px;
-
-      transition:
-        color 0.3s ease,
-        transform 0.3s ease;
+      transition: color 0.3s ease, transform 0.3s ease;
     }
 
     .ciborg:hover {
       color: #e12626;
-
       transform: translateY(-1px);
     }
 
     /* ==================================================
-       RESPONSIVE TABLET
+       RESPONSIVE
     ================================================== */
-
     @media (max-width: 900px) {
-
-      .content {
-        padding:
-          45px
-          25px
-          85px;
-      }
-
-      .hero-logo {
-        width: min(560px, 78vw);
-        max-height: 45vh;
-      }
-
-      .subtitle {
-        max-width: 650px;
-      }
-
+      .content { padding: 45px 25px 85px; }
+      .hero-logo { width: min(560px, 78vw); max-height: 45vh; }
+      .subtitle { max-width: 650px; }
+      .visit-grid { grid-template-columns: 1fr; }
+      .map-container { min-height: 220px; }
+      .map-container iframe { min-height: 220px; }
     }
-
-    /* ==================================================
-       RESPONSIVE CELULAR
-    ================================================== */
 
     @media (max-width: 600px) {
-
-      .hero {
-        min-height: 100svh;
-
-        background-position: 55% center;
-      }
-
-      .content {
-        min-height: 100svh;
-
-        padding:
-          35px
-          18px
-          80px;
-      }
-
-      .small-title {
-        font-size: 10px;
-
-        letter-spacing: 2.5px;
-
-        margin-bottom: 12px;
-      }
-
-      .line {
-        width: 50px;
-
-        height: 3px;
-
-        margin-bottom: 18px;
-      }
-
-      .hero-logo {
-        width: min(88vw, 400px);
-
-        max-width: 88vw;
-
-        max-height: 38vh;
-
-        margin-bottom: 18px;
-      }
-
-      .subtitle {
-        width: 100%;
-
-        max-width: 350px;
-
-        font-size: 11px;
-
-        letter-spacing: 1.2px;
-
-        line-height: 1.6;
-
-        margin-bottom: 25px;
-      }
-
-      .btn {
-        width: min(100%, 300px);
-
-        min-width: 0;
-
-        padding: 16px 20px;
-
-        font-size: 12px;
-
-        letter-spacing: 1.5px;
-      }
-
-      .bottom-text {
-        left: 12px;
-        right: 12px;
-
-        bottom: 17px;
-
-        font-size: 8px;
-
-        letter-spacing: 1.5px;
-      }
-
-      footer {
-        padding:
-          30px
-          18px
-          25px;
-      }
-
-      .footer-brand {
-        font-size: 16px;
-
-        letter-spacing: 1.5px;
-      }
-
-      .footer-description {
-        max-width: 330px;
-
-        font-size: 11px;
-
-        line-height: 1.6;
-      }
-
-      .footer-copy {
-        max-width: 340px;
-
-        font-size: 10px;
-
-        line-height: 1.7;
-      }
-
+      .hero { min-height: 100svh; background-position: 55% center; }
+      .content { min-height: 100svh; padding: 35px 18px 80px; }
+      .small-title { font-size: 10px; letter-spacing: 2.5px; margin-bottom: 12px; }
+      .line { width: 50px; height: 3px; margin-bottom: 18px; }
+      .hero-logo { width: min(88vw, 400px); max-width: 88vw; max-height: 38vh; margin-bottom: 18px; }
+      .subtitle { max-width: 350px; font-size: 11px; letter-spacing: 1.2px; line-height: 1.6; margin-bottom: 25px; }
+      .btn { width: min(100%, 300px); min-width: 0; padding: 16px 20px; font-size: 12px; letter-spacing: 1.5px; }
+      .bottom-text { left: 12px; right: 12px; bottom: 17px; font-size: 8px; letter-spacing: 1.5px; }
+      .section { padding: 40px 15px 30px; }
+      .payment-item { font-size: 15px; padding: 8px 18px; }
+      .visit-info { padding: 20px; }
+      .visit-info p { font-size: 15px; }
+      .map-container { min-height: 200px; }
+      .map-container iframe { min-height: 200px; }
+      footer { padding: 30px 18px 25px; }
+      .footer-brand { font-size: 16px; letter-spacing: 1.5px; }
+      .footer-description { max-width: 330px; font-size: 11px; }
+      .footer-copy { max-width: 340px; font-size: 10px; }
     }
-
-    /* ==================================================
-       CELULARES MUY PEQUEÑOS
-    ================================================== */
 
     @media (max-width: 380px) {
-
-      .content {
-        padding:
-          25px
-          14px
-          75px;
-      }
-
-      .small-title {
-        font-size: 9px;
-
-        letter-spacing: 2px;
-      }
-
-      .hero-logo {
-        width: 85vw;
-
-        max-height: 34vh;
-      }
-
-      .subtitle {
-        font-size: 10px;
-
-        letter-spacing: 1px;
-      }
-
-      .btn {
-        padding: 14px 18px;
-
-        font-size: 11px;
-      }
-
-      .bottom-text {
-        font-size: 7px;
-
-        letter-spacing: 1px;
-      }
-
-      footer {
-        padding-left: 12px;
-        padding-right: 12px;
-      }
-
+      .content { padding: 25px 14px 75px; }
+      .small-title { font-size: 9px; letter-spacing: 2px; }
+      .hero-logo { width: 85vw; max-height: 34vh; }
+      .subtitle { font-size: 10px; letter-spacing: 1px; }
+      .btn { padding: 14px 18px; font-size: 11px; }
+      .bottom-text { font-size: 7px; letter-spacing: 1px; }
+      footer { padding-left: 12px; padding-right: 12px; }
+      .card { padding: 20px 15px; }
+      .map-container { min-height: 180px; }
+      .map-container iframe { min-height: 180px; }
     }
-
-    /* ==================================================
-       PANTALLAS GRANDES
-    ================================================== */
 
     @media (min-width: 1600px) {
-
-      .content {
-        max-width: 1200px;
-      }
-
-      .hero-logo {
-        width: 650px;
-      }
-
+      .content { max-width: 1200px; }
+      .hero-logo { width: 650px; }
     }
-
-    /* ==================================================
-       REDUCIR ANIMACIONES
-    ================================================== */
 
     @media (prefers-reduced-motion: reduce) {
-
-      html {
-        scroll-behavior: auto;
-      }
-
-      .hero-logo {
-        animation: none;
-      }
-
-      .btn,
-      .ciborg {
-        transition: none;
-      }
-
+      html { scroll-behavior: auto; }
+      .hero-logo { animation: none; }
+      .btn, .ciborg { transition: none; }
     }
-
   </style>
 </head>
-
 <body>
 
   <!-- ==================================================
        HERO
   ================================================== -->
-
   <main class="hero">
-
     <div class="content">
-
-      <div class="small-title">
-        Calidad y tradición
-      </div>
-
+      <div class="small-title">Calidad y tradición</div>
       <div class="line"></div>
-
-      <!-- LOGO -->
-
-      <img
-        src="https://iili.io/CLyKwYX.png"
-        alt="Logo Carnicería Luján"
-        class="hero-logo"
-      >
-
-      <!-- SUBTÍTULO -->
-
-      <div class="subtitle">
-        Cortes seleccionados · Calidad garantizada
-      </div>
-
-      <!-- BOTÓN AL CARRITO -->
-
-      <a
-        href="https://carrito-carniceria-demo.onrender.com/"
-        class="btn"
-      >
-        Ver productos
-      </a>
-
+      <img src="https://iili.io/CLyKwYX.png" alt="Logo Carnicería Luján" class="hero-logo">
+      <div class="subtitle">Cortes seleccionados · Calidad garantizada</div>
+      <a href="https://carrito-carniceria-demo.onrender.com/" class="btn">Ver productos</a>
     </div>
-
-    <!-- TEXTO INFERIOR -->
-
-    <div class="bottom-text">
-      Carne de calidad para tu mesa
-    </div>
-
+    <div class="bottom-text">Carne de calidad para tu mesa</div>
   </main>
 
+  <!-- ==================================================
+       ¿POR QUÉ COMPRAR ACÁ?
+  ================================================== -->
+  <section class="section">
+    <h2 class="section-title">¿Por qué comprar acá?</h2>
+    <p class="section-subtitle">Calidad, confianza y atención personalizada en cada detalle</p>
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-icon">🥩</span>
+        <h3 class="card-title">Productos frescos</h3>
+        <p class="card-text">Selección de carnes y productos pensados para tu mesa.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">📲</span>
+        <h3 class="card-title">Pedido por WhatsApp</h3>
+        <p class="card-text">Armás el carrito y recibimos tu pedido con todos los detalles.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">🚚</span>
+        <h3 class="card-title">Envío o retiro</h3>
+        <p class="card-text">Elegí cómo querés recibir tu compra y coordinamos con vos.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================
+       MEDIOS DE PAGO
+  ================================================== -->
+  <section class="section" style="padding-top: 20px;">
+    <h2 class="section-title">💳 Medios de pago</h2>
+    <div class="payment-grid">
+      <span class="payment-item">💰 Efectivo</span>
+      <span class="payment-item">🏦 Transferencia</span>
+      <span class="payment-item">📱 Mercado Pago</span>
+      <span class="payment-item">💳 Débito/Crédito</span>
+    </div>
+  </section>
+
+  <!-- ==================================================
+       PREGUNTAS FRECUENTES
+  ================================================== -->
+  <section class="section">
+    <h2 class="section-title">❓ Preguntas frecuentes</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question">🚚 ¿Hacen envíos a domicilio? <span class="faq-arrow">▼</span></div>
+        <div class="faq-answer">Sí, realizamos envíos a toda la zona de Resistencia y alrededores. Consultanos por tu código postal y te informamos el costo y el tiempo de entrega.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">📱 ¿Cómo hago un pedido por WhatsApp? <span class="faq-arrow">▼</span></div>
+        <div class="faq-answer">Podés escribirnos al número que aparece en la sección "Visitanos", contarnos lo que necesitás y armamos tu pedido juntos. ¡Te respondemos al instante!</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">💰 ¿Qué medios de pago aceptan? <span class="faq-arrow">▼</span></div>
+        <div class="faq-answer">Aceptamos efectivo, transferencia bancaria, Mercado Pago y tarjetas de débito/crédito. Elegí el que más te convenga.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">🕐 ¿Cuál es el horario de atención? <span class="faq-arrow">▼</span></div>
+        <div class="faq-answer">Atendemos de lunes a sábado de 8:00 a 20:00, y los domingos de 9:00 a 13:00. ¡Siempre listos para servirte!</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================
+       VISITANOS
+  ================================================== -->
+  <section class="section">
+    <h2 class="section-title">📍 Visitanos</h2>
+    <p class="section-subtitle">Encontrá nuestra sucursal</p>
+    <div class="visit-grid">
+      <div class="visit-info">
+        <p><strong>📍 Dirección:</strong> Av. 9 de Julio 1234, Resistencia, Chaco</p>
+        <p><strong>📞 Teléfono:</strong> +54 9 362 123-4567</p>
+        <p><strong>🕐 Horario:</strong> Lun a Sáb 8:00 - 20:00 · Dom 9:00 - 13:00</p>
+        <div class="visit-family">
+          <strong>👨‍👩‍👧‍👦 Atendido por sus dueños</strong> — Siempre con la mejor atención, consejos y el trato que te merecés. ¡Somos una familia que cuida tu mesa!
+        </div>
+      </div>
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28320.553622501345!2d-59.005168!3d-27.451487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94450cb2f6e54f27%3A0x4c2d3b4b6e9f5c1a!2sResistencia%2C%20Chaco!5e0!3m2!1ses-419!2sar!4v1700000000000"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Mapa de Carnicería Luján en Resistencia, Chaco"
+        ></iframe>
+      </div>
+    </div>
+  </section>
 
   <!-- ==================================================
        FOOTER
   ================================================== -->
-
   <footer>
-
     <div class="footer-container">
-
-      <div class="footer-brand">
-        Carnicería Luján
-      </div>
-
-      <div class="footer-description">
-        Cortes seleccionados, calidad garantizada
-        y el mejor sabor para tu mesa.
-      </div>
-
+      <div class="footer-brand">Carnicería Luján</div>
+      <div class="footer-description">Cortes seleccionados, calidad garantizada y el mejor sabor para tu mesa.</div>
       <div class="footer-line"></div>
-
-      <div class="footer-copy">
-        © 2026 Carnicería Luján · Todos los derechos reservados
-      </div>
-
+      <div class="footer-copy">© 2026 Carnicería Luján · Todos los derechos reservados</div>
       <div class="footer-copy">
         Creado y diseñado por
-
-        <a
-          href="https://ciborg347.onrender.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="ciborg"
-        >
-          CIBORG347
-        </a>
+        <a href="https://ciborg347.onrender.com" target="_blank" rel="noopener noreferrer" class="ciborg">CIBORG347</a>
       </div>
-
     </div>
-
   </footer>
 
 </body>
