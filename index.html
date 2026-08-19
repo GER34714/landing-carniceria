@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -13,11 +14,19 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: Arial, Helvetica, sans-serif;
       background: #111;
       color: #fff;
     }
+
+    /* =========================
+       HERO
+    ========================= */
 
     .hero {
       min-height: 100vh;
@@ -46,7 +55,11 @@
       position: relative;
       z-index: 2;
       padding: 30px;
-      max-width: 900px;
+      max-width: 1000px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .small-title {
@@ -54,7 +67,7 @@
       letter-spacing: 5px;
       text-transform: uppercase;
       color: #ddd;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
     .line {
@@ -64,27 +77,65 @@
       margin: 0 auto 25px;
     }
 
-    h1 {
-      font-size: clamp(3.5rem, 9vw, 8rem);
-      font-weight: 900;
-      line-height: 0.9;
-      letter-spacing: 5px;
-      text-transform: uppercase;
+    /* =========================
+       LOGO
+    ========================= */
 
-      text-shadow:
-        0 4px 10px rgba(0, 0, 0, 0.8),
-        0 8px 30px rgba(0, 0, 0, 0.7);
+    .hero-logo {
+      width: clamp(280px, 45vw, 620px);
+      max-width: 90%;
+      height: auto;
+
+      display: block;
+
+      margin: 5px auto 25px;
+
+      filter:
+        drop-shadow(0 8px 15px rgba(0, 0, 0, 0.8))
+        drop-shadow(0 0 25px rgba(181, 31, 31, 0.35));
+
+      animation: logoPulse 3s ease-in-out infinite;
+    }
+
+    @keyframes logoPulse {
+      0% {
+        transform: scale(1);
+        filter:
+          drop-shadow(0 8px 15px rgba(0, 0, 0, 0.8))
+          drop-shadow(0 0 20px rgba(181, 31, 31, 0.25));
+      }
+
+      50% {
+        transform: scale(1.035);
+        filter:
+          drop-shadow(0 10px 20px rgba(0, 0, 0, 0.85))
+          drop-shadow(0 0 35px rgba(181, 31, 31, 0.55));
+      }
+
+      100% {
+        transform: scale(1);
+        filter:
+          drop-shadow(0 8px 15px rgba(0, 0, 0, 0.8))
+          drop-shadow(0 0 20px rgba(181, 31, 31, 0.25));
+      }
     }
 
     .subtitle {
-      margin: 30px 0 35px;
+      margin: 10px 0 35px;
 
       font-size: 1.15rem;
       letter-spacing: 3px;
       text-transform: uppercase;
 
       color: #f1f1f1;
+
+      text-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.8);
     }
+
+    /* =========================
+       BOTÓN
+    ========================= */
 
     .btn {
       display: inline-block;
@@ -105,13 +156,23 @@
       border-radius: 3px;
 
       transition: all 0.3s ease;
+
+      box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.35);
     }
 
     .btn:hover {
       background: transparent;
       border-color: white;
       transform: translateY(-3px);
+
+      box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.5);
     }
+
+    /* =========================
+       TEXTO INFERIOR HERO
+    ========================= */
 
     .bottom-text {
       position: absolute;
@@ -126,9 +187,84 @@
       text-transform: uppercase;
 
       color: rgba(255,255,255,0.7);
+
+      z-index: 3;
     }
 
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      background: #0b0b0b;
+
+      border-top: 1px solid rgba(255,255,255,0.08);
+
+      padding: 30px 20px;
+
+      text-align: center;
+    }
+
+    .footer-brand {
+      font-size: 18px;
+      font-weight: 800;
+
+      letter-spacing: 2px;
+      text-transform: uppercase;
+
+      margin-bottom: 10px;
+    }
+
+    .footer-copy {
+      font-size: 13px;
+      color: #999;
+
+      margin-bottom: 12px;
+    }
+
+    .ciborg {
+      display: inline-block;
+
+      color: #fff;
+      font-weight: bold;
+
+      text-decoration: none;
+
+      transition: all 0.3s ease;
+    }
+
+    .ciborg:hover {
+      color: #b51f1f;
+      transform: translateY(-1px);
+    }
+
+    .footer-line {
+      width: 45px;
+      height: 2px;
+
+      background: #a71919;
+
+      margin: 15px auto;
+    }
+
+    .footer-bottom {
+      font-size: 11px;
+      color: #666;
+
+      letter-spacing: 1px;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
     @media (max-width: 600px) {
+
+      .hero {
+        min-height: 100svh;
+
+        background-position: center;
+      }
 
       .content {
         padding: 20px;
@@ -137,28 +273,79 @@
       .small-title {
         font-size: 11px;
         letter-spacing: 3px;
+        margin-bottom: 12px;
       }
 
-      h1 {
-        font-size: 3.5rem;
-        letter-spacing: 2px;
+      .line {
+        width: 55px;
+        height: 3px;
+        margin-bottom: 15px;
+      }
+
+      .hero-logo {
+        width: 85vw;
+        max-width: 420px;
+        margin-bottom: 20px;
       }
 
       .subtitle {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         letter-spacing: 1.5px;
-        line-height: 1.5;
+        line-height: 1.6;
+
+        margin-bottom: 28px;
       }
 
       .btn {
         width: 100%;
         max-width: 280px;
+
+        padding: 16px 25px;
+      }
+
+      .bottom-text {
+        bottom: 18px;
+
+        font-size: 9px;
+        letter-spacing: 2px;
+
+        padding: 0 15px;
+      }
+
+      footer {
+        padding: 25px 15px;
+      }
+
+      .footer-brand {
+        font-size: 15px;
+      }
+
+      .footer-copy {
+        font-size: 12px;
       }
     }
+
+    /* Reduce animation for users who prefer less motion */
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-logo {
+        animation: none;
+      }
+
+      .btn,
+      .ciborg {
+        transition: none;
+      }
+    }
+
   </style>
 </head>
 
 <body>
+
+  <!-- =========================
+       HERO
+  ========================= -->
 
   <main class="hero">
 
@@ -170,16 +357,18 @@
 
       <div class="line"></div>
 
-      <h1>
-        Carnicería<br>
-        Luján
-      </h1>
+      <!-- LOGO CARNICERÍA LUJÁN -->
+      <img
+        src="https://iili.io/CLyKwYX.png"
+        alt="Carnicería Luján"
+        class="hero-logo"
+      >
 
       <div class="subtitle">
         Cortes seleccionados · Calidad garantizada
       </div>
 
-      <a href="#" class="btn">
+      <a href="#productos" class="btn">
         Ver productos
       </a>
 
@@ -191,5 +380,41 @@
 
   </main>
 
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    <div class="footer-brand">
+      Carnicería Luján
+    </div>
+
+    <div class="footer-line"></div>
+
+    <div class="footer-copy">
+      © 2026 Carnicería Luján · Todos los derechos reservados
+    </div>
+
+    <div class="footer-copy">
+      Creado y diseñado por
+      <a
+        href="https://ciborg347.onrender.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="ciborg"
+      >
+        CIBORG347
+      </a>
+    </div>
+
+    <div class="footer-bottom">
+      Diseño web y soluciones digitales
+    </div>
+
+  </footer>
+
 </body>
 </html>
+```
